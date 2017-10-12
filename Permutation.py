@@ -1,0 +1,32 @@
+word=input("Enter word")
+key0=input("Enter key")
+i=0
+key=[]
+while(i<len(key0)):
+    key.append(int(key0[i]))
+    i+=1
+MAX=max(key)
+z=MAX-len(word)%MAX
+i=0
+while(i<z):
+    word+="z"
+    i+=1
+i=0
+stockpile=[]
+while(i<MAX):
+    stockpile.append(word[i])
+    i+=1
+i=MAX
+k=0
+while(i<len(word)):
+    if(k==MAX):
+        k=0
+    stockpile[k]+=word[i]
+    i+=1
+    k+=1
+i=0
+rezult=""
+while(i<MAX):
+    rezult+=stockpile[key[i]-1]
+    i+=1
+print(rezult)
